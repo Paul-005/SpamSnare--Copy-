@@ -17,6 +17,10 @@ app.use("/", emailRouter)
 app.use('/', inboxRoute);
 
 
+app.get("/", (req, res) => {
+    res.send("Hello World!");
+})
+
 
 // Connect to SAP HANA database
 connect().then(() => {
