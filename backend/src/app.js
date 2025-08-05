@@ -9,6 +9,9 @@ const cors = require('cors');
 const app = express();
 const PORT = 3000;
 
+app.get("/", (req, res) => {
+    res.send("Hello World!");
+})
 
 app.use(cors({ origin: "*" }))
 app.use(express.json());
@@ -17,9 +20,7 @@ app.use("/", emailRouter)
 app.use('/', inboxRoute);
 
 
-app.get("/", (req, res) => {
-    res.send("Hello World!");
-})
+
 
 
 // Connect to SAP HANA database
